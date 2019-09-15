@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Division;
 use Illuminate\Http\Request;
 
 class RequestBlood extends Controller
@@ -12,7 +13,8 @@ class RequestBlood extends Controller
 
     public function create()
     {
-      return view('blood_req/create');
+      $divisions = Division::all();
+      return view('blood_req/create', compact('divisions'));
     }
 
 

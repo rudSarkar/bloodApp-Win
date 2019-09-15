@@ -18,7 +18,16 @@ class CreateRequestBloodTable extends Migration
             $table->string('name');
             $table->string('blood_group');
             $table->string('mobile');
-            $table->string('address');
+
+            $table->bigInteger('division')->unsigned();
+            $table->foreign('division')->references('id')->on('divisions');
+
+            $table->bigInteger('district')->unsigned();
+            $table->foreign('district')->references('id')->on('districts');
+
+            $table->bigInteger('upazila')->unsigned();
+            $table->foreign('upazila')->references('id')->on('upazilas');
+            
             $table->string('when_need');
             $table->timestamps();
         });

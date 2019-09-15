@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Division;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +19,10 @@ class UserController extends Controller
       abort(404);
     }
     $user    = User::find($user_id);
-    return view('user_info_edit')->with('user', $user);
+    $divisions = Division::all();
+    return view('user_info_edit')
+           ->with('user', $user)
+           ->with('divisions', $divisions);
   }
 
   public function edit($id)
@@ -31,19 +35,23 @@ class UserController extends Controller
   {
 
       $this->validate($request, [
-         'name'             => 'required',
-         'email'            => 'email',
-         'blood_group'      => 'required',
-         'address'          => 'nullable',
-         'mobile'           => 'required',
-         'last_donate_date' => 'required',
+          'name'             => 'required',
+          'email'            => 'email',
+          'blood_group'      => 'required',
+          'division'         => 'nullable',
+          'district'         => 'nullable',
+          'division'         => 'nullable',
+          'upazila'          => 'required',
+          'mobile'           => 'required',
       ]);
 
       $user = User::find($id);
       $user->name              = $request->input('name');
       $user->email             = $request->input('email');
       $user->blood_group       = $request->input('blood_group');
-      $user->address           = $request->input('address');
+      $user->division          = $request->input('division');
+      $user->district          = $request->input('district');
+      $user->upazila           = $request->input('upazila');
       $user->mobile            = $request->input('mobile');
       $user->last_donate_date  = $request->input('last_donate_date');
 

@@ -24,7 +24,7 @@
 						                <th>ID</th>
 						                <th>Name</th>
 						                <th>Blood Group</th>
-						                <th>Address</th>
+						                <th>Location</th>
                             <th>Email</th>
 						                <th>Mobile</th>
 						                <th>Last Donate Date</th>

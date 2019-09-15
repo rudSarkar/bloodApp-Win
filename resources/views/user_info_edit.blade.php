@@ -43,35 +43,29 @@
                   </div>
 
                   <div class="form-group col-md-6">
-                    <label class="form-label" for="address">Division</label>
-                    <select name="address" class="form-control" id="address">
-                      <option selected="" value="{{ $user->address }}">{{ $user->address }}</option>
-                      <option value="Dhaka">
-                        Dhaka
-                      </option>
-                      <option value="Rajshahi">
-                        Rajshahi
-                      </option>
-                      <option value="Rajshahi">
-                        Rangpur
-                      </option>
-                      <option value="Khulna">
-                        Khulna
-                      </option>
-                      <option value="Mymensingh">
-                        Mymensingh
-                      </option>
-                      <option value="Chittagong">
-                        Chittagong
-                      </option>
-                      <option value="Barishal">
-                        Barishal
-                      </option>
-                      <option value="Sylhet">
-                        Sylhet
-                      </option>
+                    <label class="form-label" for="division">Division</label>
+                    <select name="division" class="form-control" id="division">
+                      <option selected="" value="{{ $user->division }}">{{ $user->getDivName()}}</option>
+                      @foreach($divisions as $division)
+                        <option value="{{ $division->id }}">{{ $division->name }}</option>
+                      @endforeach
                     </select>
                   </div>
+
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="district">District</label>
+                    <select name="district" class="form-control" id="district">
+                      <option selected="" value="{{ $user->district }}">{{ $user->getDisName()}}</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <label class="form-label" for="upazila">Division</label>
+                    <select name="upazila" class="form-control" id="upazila">
+                      <option selected="" value="{{ $user->upazila }}">{{ $user->getUpaName()}}</option>
+                    </select>
+                  </div>
+
                   <div class="form-group col-md-6">
                     <label class="form-label" for="isAdmin">Last Blood Donated</label>
                     <input type="date" class="form-control" name="last_donate_date" value="{{$user->last_donate_date}}">

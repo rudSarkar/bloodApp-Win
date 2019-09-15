@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Division;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -31,7 +32,10 @@ class DashboardController extends Controller
     public function edit($id)
     {
         $user    = User::find($id);
-        return view('admin_user_edit')->with('user', $user);
+        $divisons = Division::all();
+        return view('admin_user_edit')
+               ->with('user', $user)
+               ->with('divisions', $divisons);
     }
 
     public function update(Request $request, $id)
@@ -41,7 +45,10 @@ class DashboardController extends Controller
            'name'             => 'required',
            'email'            => 'email',
            'blood_group'      => 'required',
-           'address'          => 'nullable',
+           'division'         => 'nullable',
+           'district'         => 'nullable',
+           'division'         => 'nullable',
+           'upazila'          => 'required',
            'mobile'           => 'required',
            'isAdmin'          => 'nullable',
         ]);
@@ -50,7 +57,9 @@ class DashboardController extends Controller
         $user->name              = $request->input('name');
         $user->email             = $request->input('email');
         $user->blood_group       = $request->input('blood_group');
-        $user->address           = $request->input('address');
+        $user->division          = $request->input('division');
+        $user->district          = $request->input('district');
+        $user->upazila           = $request->input('upazila');
         $user->mobile            = $request->input('mobile');
         $user->isAdmin           = $request->input('isAdmin');
 
