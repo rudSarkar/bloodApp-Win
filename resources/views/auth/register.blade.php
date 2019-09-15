@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Register')
+
 @section('content')
 <!-- Reg UI Start Here -->
 <div class="page-single">

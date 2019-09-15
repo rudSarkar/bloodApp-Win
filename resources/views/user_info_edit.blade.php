@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'User Info Edit')
+
 @section('content')
 <div class="page-single">
   <div class="container">

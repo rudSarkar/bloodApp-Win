@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Request For Blood')
+
 @section('content')
 <div class="page-single">
 	<div class="container">
