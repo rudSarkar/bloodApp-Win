@@ -16,6 +16,20 @@ body {
 .col-md-3.py-2.text-right.d-sm-block a:hover {
   color: #FFF;
 }
+
+.footer {
+    background-color: rgb(255, 255, 255);
+    color: #6c757d;
+}
+
+.bg-lighter {
+    background-color: #f8f9fa !important;
+}
+
+.border-red {
+    border-color: #ED1F24 !important;
+}
+
 .page-single {
     flex: 1 1 auto;
     display: flex;

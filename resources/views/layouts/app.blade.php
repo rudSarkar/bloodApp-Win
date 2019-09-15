@@ -105,6 +105,14 @@
       <main class="py-4">
           @yield('content')
       </main>
+
+      <footer class="pt-4 pb-3 footer footer-light bg-lighter mt-4 border-red" style="border-top:5px solid">
+        <div class="container">
+          <div class="py-2">
+              © Copyright 2019 Blood App, All Right Reserve
+          </div>
+        </div>
+      </footer>
     </div>
 </body>
 </html>
