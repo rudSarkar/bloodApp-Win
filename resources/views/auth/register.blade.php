@@ -97,7 +97,7 @@
 
           <div class="form-group col-md-6">
             <label class="form-label" for="address">Division</label>
-            <select name="division" class="form-control @error('address') is-invalid @enderror" id="division" required>
+            <select name="division" class="form-control @error('division') is-invalid @enderror" id="division" required>
               <option disabled="" selected="">Choose Division</option>
               @foreach($divisions as $division)
               <option value="{{ $division->id }}">

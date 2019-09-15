@@ -40,9 +40,9 @@ class UserController extends Controller
           'blood_group'      => 'required',
           'division'         => 'nullable',
           'district'         => 'nullable',
-          'division'         => 'nullable',
           'upazila'          => 'required',
           'mobile'           => 'required',
+          'last_donate_date' => 'required',
       ]);
 
       $user = User::find($id);

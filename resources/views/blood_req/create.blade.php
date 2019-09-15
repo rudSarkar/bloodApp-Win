@@ -9,7 +9,7 @@
 					<span class="text-dark font-weight-bold">Create Request For Blood</span>
 				</h3>
 
-				<form class="mb-3 py-4 px-4 bg-white rounded" method="POST" action="{{ route('request_blood.create') }}" id="request-form">
+				<form class="mb-3 py-4 px-4 bg-white rounded" method="POST" action="{{ route('request_blood.store') }}" id="request-form">
         @csrf
 
         <div class="py-1">
@@ -69,7 +69,7 @@
 
 						<div class="form-group col-md-6">
 	            <label class="form-label" for="address">Division</label>
-	            <select name="division" class="form-control @error('address') is-invalid @enderror" id="division" required>
+	            <select name="division" class="form-control @error('division') is-invalid @enderror" id="division" required>
 	              <option disabled="" selected="">Choose Division</option>
 	              @foreach($divisions as $division)
 	              <option value="{{ $division->id }}">

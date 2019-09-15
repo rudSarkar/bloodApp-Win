@@ -29,7 +29,7 @@ Route::get("/logout", function(){
 });
 
 // Request blood
-Route::resource('/request_blood', 'RequestBlood')->only('index', 'create');
+Route::resource('request_blood', 'BloodRequest')->only('index', 'create', 'store');
 
 Route::get('/ajax-dis', function()
 {

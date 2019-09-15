@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRequestBloodTable extends Migration
+class CreateRequestBloodsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateRequestBloodTable extends Migration
      */
     public function up()
     {
-        Schema::create('request_blood', function (Blueprint $table) {
+        Schema::create('request_bloods', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('blood_group');
@@ -27,7 +27,7 @@ class CreateRequestBloodTable extends Migration
 
             $table->bigInteger('upazila')->unsigned();
             $table->foreign('upazila')->references('id')->on('upazilas');
-            
+
             $table->string('when_need');
             $table->timestamps();
         });
@@ -40,6 +40,6 @@ class CreateRequestBloodTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('request_blood');
+        Schema::dropIfExists('request_bloods');
     }
 }
