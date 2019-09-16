@@ -77,8 +77,8 @@
 
                       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                           @if(Auth::check() && Auth::user()->id == 1)
-                            <a class="dropdown-item" href="/dashboard">Dashboard</a>
-                            <a class="dropdown-item" href="/user/edit">Update info</a>
+                            <a class="dropdown-item" href="dashboard">Dashboard</a>
+                            <a class="dropdown-item" href="user/edit">Update info</a>
                           @elseif(Auth::check() && Auth::user()->isAdmin == 2)
                             <a class="dropdown-item" href="dashboard">Dashboard</a>
                             <a class="dropdown-item" href="user/edit">Update info</a>
