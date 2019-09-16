@@ -80,10 +80,10 @@
                             <a class="dropdown-item" href="/dashboard">Dashboard</a>
                             <a class="dropdown-item" href="/user/edit">Update info</a>
                           @elseif(Auth::check() && Auth::user()->isAdmin == 2)
-                            <a class="dropdown-item" href="/dashboard">Dashboard</a>
-                            <a class="dropdown-item" href="/user/edit">Update info</a>
+                            <a class="dropdown-item" href="dashboard">Dashboard</a>
+                            <a class="dropdown-item" href="user/edit">Update info</a>
                           @else
-                            <a class="dropdown-item" href="/user/edit">Update info</a>
+                            <a class="dropdown-item" href="user/edit">Update info</a>
                           @endif
                           <a class="dropdown-item" href="{{ route('logout') }}"
                              onclick="event.preventDefault();
