@@ -18,10 +18,10 @@ class IsAdmin
      {
          if (Auth::check() && Auth::user()->id == 1) {
              return $next($request);
-         }
-	 else if (Auth::check() && Auth::user()->isAdmin == 2) {
-	     return $next($request);	 
-	 }
+        }
+        else if (Auth::check() && Auth::user()->isAdmin == 2) {
+            return $next($request);	 
+        }
          return redirect('/user/edit')->with('status', 'Only Admin Can Access this.');
      }
 }
