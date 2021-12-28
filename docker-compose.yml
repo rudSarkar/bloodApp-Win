@@ -39,8 +39,9 @@ services:
     environment:
       PMA_HOST: db
       PMA_PORT: 3306
-      PMA_USER: ${DB_USERNAME}
-      PMA_PASSWORD: ${DB_PASSWORD}
+      # disable automatic login Reference: https://github.com/phpmyadmin/docker/issues/180
+      # PMA_USER: ${DB_USERNAME}
+      # PMA_PASSWORD: ${DB_PASSWORD}
       PMA_DATABASE: ${DB_DATABASE}
     ports:
       - 8080:80
